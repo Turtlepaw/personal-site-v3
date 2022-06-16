@@ -7,4 +7,4 @@
 
 - [X] Remove `<br>` tags and add `padding` css
 - [X] Reformat the code
-- [] `r/` links using MongoDB in `next.config.js`
+- [ ] `r/` links using MongoDB in `next.config.js`
