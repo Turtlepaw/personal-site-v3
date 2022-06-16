@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+head,
+body, .body {
+  background-color: #3A3C41;
+}
+
+a {
+  color: #5865f2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5865f2;
+  text-decoration: underline;
+}
+
+.link {
+  color: #5865f2;
+}
+
+.link:hover {
+  text-decoration: none !important;
+  background-image: linear-gradient(90deg, #ec8c69, #fa7199);
+  background-position: bottom;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}
+
+.invite {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.text-light {
+  color: #afafaf;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project {
+  /*display: flex;
+  flex: 0 32%;
+  height: 100px;
+  margin-bottom: 2%;  (100-32*3)/2 */
+  width: 32%;
+  padding-bottom: 18%; /* 32:18, i.e. 16:9 */
+  margin-bottom: 2%; /* (100-32*3)/2 */
+}
+
+.projectIcon {
+  
+}
+
+.gr1 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #8360c3, #2ebf91);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr2 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #fc5c7d, #6a82fb);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr3 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #c6ffdd, #fbd786, #f7797d);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr4 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #00b4db, #0083b0);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr5 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #00b09b, #96c93d);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr6 {
+  color: transparent;
+  background-image: linear-gradient(90deg, rgb(242, 112, 156), rgb(255, 148, 114));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr7 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #d64c7f,#ee4758 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr8 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #0099f7, #f11712);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr9 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #ff9966, #ff5e62);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gr10 {
+  color: transparent;
+  background-image: linear-gradient(90deg, #d4fc79 0%, #96e6a1 100%);;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.grTitle {
+  color: transparent;
+  background-image: linear-gradient(90deg, #5865f2, #E684AE);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.grDescription {
+  color: transparent;
+  background-image: linear-gradient(90deg, #ec8c69, #fa7199);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.grPageTitle {
+  color: transparent;
+  background-image: linear-gradient(135deg, #79CBCA, #E684AE);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.blurpleText,
+.text-blurple {
+  color: #5865f2;
+}
+
+.projectImage {
+  border-radius: 50%;
+}
+
+.iconImage {
+  display: inline;
+  margin-bottom: 35px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Spinner */
+
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1,
+.cube2 {
+  background-color: #5865f2;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% {
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)
+  }
+
+  50% {
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)
+  }
+
+  75% {
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg)
+  }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
