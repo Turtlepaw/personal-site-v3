@@ -5,5 +5,6 @@
 
 ## Roadmap
 
-[ ] Remove `<br>` tags and add `padding` css
-[ ] Reformat the code
+[x] Remove `<br>` tags and add `padding` css
+[x] Reformat the code
+[ ] `r/` links using MongoDB in `next.config.js`
