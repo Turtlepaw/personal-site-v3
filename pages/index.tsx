@@ -2,7 +2,7 @@ import { Center } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import NextImage from 'next/image'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { InviteWidget } from '../components/invite'
 import { Project } from '../components/project'
 import styles from '../styles/Home.module.css'
@@ -18,45 +18,60 @@ function Image({ src, alt, className }: {
 }
 
 function Title({ children, image, description }: {
-  children: ReactNode;
+  children: string;
   image: string;
   description?: string;
 }) {
   return (
-    <>
+    <div id={children.toLowerCase()}>
       <Center className='pt-6 pb-1'>
-        <Image src={image} className='iconImage' alt='' /> <span className="text-6xl font-bold grTitle pl-5">{children}</span>
+        <Image src={image} className='iconImage' alt='' /> <span className="text-6xl font-bold pb-2 pl-5">{children}</span>
       </Center>
-      <Center>{description && <p className="text-2xl text-light pb-6">{description}</p>}</Center>
-    </>
+      <Center className='font-semibold'>{description && <p className="text-2xl text-light pb-6">{description}</p>}</Center>
+    </div>
   );
 }
 
 const Home: NextPage = () => {
+  const [isHovering, setHover] = useState(false);
   return (
     <div className="text-white text-center pb-12">
       <div className='text-center py-10'>
         <Center>
-          <div className='border-gray-500 border-4 py-5 pb-7 mb-5 w-96'>
-            <div className="text-6xl font-bold">Hey! I&apos;m <span className="grPageTitle">Turtlepaw</span></div>
-            <div className='text-light text-2xl pt-2'>I&apos;m a developer and gamer</div>
+          <div className="text-4xl font-bold">Hi there, I'm Turtlepaw.</div>
+        </Center>
+        <Center className='pt-2'>
+          <div>
+            <div className='bg-gray -500 bg-green-600 border-gray-300 border-opacity-70 bg-opacity-30 border-[.1rem] mx-2 my-3 rounded-md w-36 h-8 inline-block'>
+              <Center className='pt-0.5 font-semibold'>
+                <div className='rounded-full bg-green-600 hover:visible cursor-pointer px-2 py-2'>
+                  {/*<img src='Dismiss.svg' className='w-7 px-1 py-1' />*/}
+                </div>
+                <div className='pl-2 pb-0.5'>
+                  Programmer
+                </div>
+              </Center>
+            </div>
+            <div className='bg-gray -500 bg-blue-500 border-gray-300 border-opacity-70 bg-opacity-30 border-[.1rem] mx-2 my-3 rounded-md w-24 h-8 inline-block'>
+              <Center className='pt-0.5 font-semibold'>
+                <div className='rounded-full bg-blue-500 hover:visible cursor-pointer px-2 py-2'>
+                  {/*<img src='Dismiss.svg' className='w-7 px-1 py-1' />*/}
+                </div>
+                <div className='pl-2 pb-0.5'>
+                  Artist
+                </div>
+              </Center>
+            </div>
           </div>
         </Center>
-        <div className="grPageTitle text-4xl font-bold">Full Bio</div>
         <Center>
-          <hr className='w-36 my-5' />
+          <div className="font-semibold h-52 mx-5 w-[28rem] my-5 py-5 border-gray-500 border-2 rounded-lg bg-gray-500 bg-opacity-10 text-lg px-16 pt-2">
+            <h1 className='font-bold uppercase pt-5 text-lg' id='about-me'>About Me</h1>
+            <Center className='pt-5'>Hi there, I'm Turtlepaw! I enjoy building websites, playing games, and drawing.</Center>
+          </div>
         </Center>
-        <div className="font-bold text-lg px-16 pt-2">
-          Hey there! I&apos;m Turtlepaw, I like to <span className="grDescription">code, draw, and play games like Halo!</span> I also like to create <span className="grDescription">Discord bots and Node.js packages</span> for <span className="blurpleText">Discord</span>. You can contact me through <a href="/r/myDiscord" className='text-blurple underline'>Discord</a> or <a href="mailto:hi.homepage@trtle.xyz" className='text-blurple underline'>Email</a>! My favorite programming language is <span className='grDescription'>TypeScript</span>.
-        </div>
       </div>
       <div>
-        <Title image='discord.svg' description='My Discord Servers'>Discords</Title>
-        <div>
-          <InviteWidget InviteURL="https://discord.gg/6ed58Kmjqu" />
-          <InviteWidget InviteURL="https://discord.gg/SJHn4bhRJa" />
-          <InviteWidget InviteURL="https://discord.gg/jH5Cg5mzyP" />
-        </div>
         <Title image='tools.svg' description='Skills and tools I use'>Skills</Title>
         <div>
           <Center>
@@ -67,36 +82,13 @@ const Home: NextPage = () => {
           </Center>
         </div>
         <Title image='github.svg' description='Projects I&apos;m currently working on'>Projects</Title>
-        <div className='projects'>
-          <Project
-            Name="Horizon"
-            IconURL="https://horizon.trtle.xyz/ico_rounded.svg"
-            URL="https://horizon.trtle.xyz/"
-            Description='The TS-built, feature-rich, open-source, multipurpose Discord bot'
-          />
+        <div>
           <Project
             Name="The Sims 4 Modding"
             IconURL="https://ts4mods.vercel.app/ts4m.svg"
             URL="https://ts4mods.vercel.app/"
             Description='The open-source Sims 4 mod listing website and mod manager'
           />
-          <Project
-            Name="Discord Trivia"
-            IconURL="https://cdn.discordapp.com/icons/933113625537835049/e36e3ddcc37019459f1562c5f4e8e5b2.png"
-            URL="https://discord.gg/jH5Cg5mzyP"
-            Description='Discord Trivia is a Discord.JS based NodeJS library that provides powerful trivia match functionality to your Discord bot.'
-          />
-        </div>
-        <Title image='discordstatus.svg' description='My Discord status provided by Lanyard'>Discord Status</Title>
-        <div>
-          <a href="https://discord.com/users/820465204411236362">
-            <Center>
-              {
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src="https://lanyard.cnrad.dev/api/820465204411236362" alt='Status' />
-              }
-            </Center>
-          </a>
         </div>
       </div>
     </div>
