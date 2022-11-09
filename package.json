@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
+    "@discord-message-components/markdown": "^0.2.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@types/nprogress": "^0.2.0",
     "framer-motion": "^6",
+    "mongoose": "^6.3.8",
     "next": "12.1.6",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-loader-spinner": "^5.1.5"
+    "react-loader-spinner": "^5.1.5",
+    "simple-markdown": "^0.7.3"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
